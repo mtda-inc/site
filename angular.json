@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/landing",
+            "outputPath": "dist/landing/browser",
             "index": "projects/landing/src/index.html",
             "main": "projects/landing/src/main.ts",
             "polyfills": "projects/landing/src/polyfills.ts",
@@ -103,6 +103,65 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/landing/server",
+            "main": "projects/landing/server.ts",
+            "tsConfig": "projects/landing/tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "projects/landing/src/environments/environment.ts",
+                  "with": "projects/landing/src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "landing:build:development",
+              "serverTarget": "landing:server:development"
+            },
+            "production": {
+              "browserTarget": "landing:build:production",
+              "serverTarget": "landing:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "landing:build:production",
+              "serverTarget": "landing:server:production"
+            },
+            "development": {
+              "browserTarget": "landing:build:development",
+              "serverTarget": "landing:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
