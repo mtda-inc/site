@@ -10,7 +10,11 @@
     "dev:ssr": "ng run landing:serve-ssr",
     "serve:ssr": "node dist/landing/server/main.js",
     "build:ssr": "ng build && ng run landing:server",
-    "prerender": "ng run landing:prerender"
+    "prerender": "ng run landing:prerender",
+    "ng:bundle:component": "sh -c 'npm run -s ng:bundle:create-module $0 $1 modules && npm run -s ng:bundle:create-component $0 $1 modules'",
+    "ng:bundle:route": "sh -c 'npm run -s ng:bundle:create-module $0 $1 routes && npm run -s ng:bundle:create-component $0 $1 routes'",
+    "ng:bundle:create-module": "sh -c 'ng g module --project=$0 $2/$1'",
+    "ng:bundle:create-component": "sh -c 'ng g component --project=$0 --change-detection=OnPush --export=true $2/$1'"
   },
   "private": true,
   "dependencies": {
