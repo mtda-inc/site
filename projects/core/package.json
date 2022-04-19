@@ -1,0 +1,20 @@
+{
+    "name": "careplan",
+    "version": "0.0.0",
+    "scripts": {
+      "ng:bundle:component": "sh -c 'npm run -s ng:bundle:create-module $0 modules && npm run -s ng:bundle:create-component $0 modules'",
+      "ng:bundle:create-module": "sh -c 'ng g module --project=core $1/$0'",
+      "ng:bundle:create-component": "sh -c 'ng g component --project=core --change-detection=OnPush --export=true $1/$0'"
+    },
+    "private": true,
+    "prettier": {
+      "tabWidth": 4,
+      "printWidth": 140,
+      "singleQuote": true,
+      "jsxBracketSameLine": false,
+      "disableLanguages": [
+        "html"
+      ]
+    }
+  }
+  
