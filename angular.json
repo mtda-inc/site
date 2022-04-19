@@ -32,7 +32,8 @@
             ],
             "styles": [
               "projects/landing/src/assets/fonts/font-face.scss",
-              "projects/landing/src/styles.scss"
+              "projects/landing/src/styles.scss",
+              "projects/landing/src/theme/theme.scss"
             ],
             "scripts": []
           },

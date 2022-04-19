@@ -1,0 +1,64 @@
+@import 'variables';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html,
+body {
+    scroll-behavior: smooth;
+
+    background-color: var(--default-background);
+    font-weight: normal;
+    @apply text-base text-gray-900;
+
+    letter-spacing: 0.048rem;
+    a,
+    input,
+    button {
+        letter-spacing: 0.038rem;
+    }
+
+    .uppercase,
+    input.uppercase {
+        letter-spacing: 0.054rem;
+    }
+}
+
+.section-container {
+    @apply w-full max-w-[1920px] my-0 mx-auto block relative;
+
+    &:not(.smaller-py) {
+        @apply py-16 lg:py-24;
+    }
+    &.smaller-py {
+        @apply py-10 lg:py-16;
+    }
+}
+
+.inner-container {
+    @apply max-w-6xl mx-auto px-6 md:px-12;
+}
+
+.bg-square {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(241 245 249 / 0.04)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, 1));
+}
+
+.bg-gradient {
+    content: '';
+    background: linear-gradient(-47deg, var(--color-secondary-900) 0%, var(--color-primary-900) 47%);
+    opacity: 0.94;
+}
+
+@media (min-width: 1024px) {
+    .lg\:text-5xl.leading-snug {
+        font-size: 3rem;
+        line-height: 1.375;
+    }
+}
+
+@media (min-width: 768px) {
+    .md\:text-3xl.leading-snug {
+        line-height: 1.375;
+    }
+}
