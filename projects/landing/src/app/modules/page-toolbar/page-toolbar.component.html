@@ -1,0 +1,116 @@
+<div class="h-full max-w-6xl mx-auto px-6 md:px-12 my-0 mx-auto flex items-center justify-between gap-4 text-primary-50">
+    <a [routerLink]="['/']">
+        <img
+            class="-mt-2"
+            src="/assets/images/logo-full-semi-white.png"
+            alt="MTDA logo - Software Engineer based in Brazil working remote for US, Canada and Europe"
+            width="93"
+            height="27"
+            [hidden]="theme !== 'dark'"
+        >
+
+        <img
+            class="-mt-2"
+            src="/assets/images/logo-full.png"
+            alt="MTDA logo - Software Engineer based in Brazil working remote for US, Canada and Europe"
+            width="93"
+            height="27"
+            [hidden]="theme !== 'light'"
+        >
+    </a>
+
+    <div class="flex justify-end items-center">
+        <div class="lg:flex gap-2 hidden">
+            <a
+                *ngFor="let item of navigation; trackBy:trackByFn"
+                [routerLink]="[item.link]"
+                [fragment]="item.fragment || null"
+                class="flex items-center gap-4 bg-transparent border-transparent font-medium uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none ease-linear transition-all duration-150"
+                [ngClass]="{'text-primary-50 hover:bg-primary-500 hover:text-white': theme === 'dark', 'text-primary hover:bg-primary-50 hover:text-primary-600': theme === 'light'}"
+            >
+                {{ item.label }}
+            </a>
+        </div>
+
+        <div class="flex items-center pl-6 gap-6">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="h-5 w-5"
+                fill="none"
+            >
+                <path
+                    d="M13.5374 11.8153C13.5374 15.5792 10.5069 18.6303 6.76884 18.6303C3.03073 18.6303 0 15.5785 0 11.8153C0 8.05212 3.0305 5 6.76884 5C10.5072 5 13.5374 8.05143 13.5374 11.8153ZM20.9628 11.8153C20.9628 15.3582 19.4476 18.2314 17.5784 18.2314C15.7092 18.2314 14.194 15.3582 14.194 11.8153C14.194 8.27242 15.709 5.39922 17.5782 5.39922C19.4474 5.39922 20.9626 8.2715 20.9626 11.8153H20.9628ZM24 11.8153C24 14.9888 23.4672 17.5631 22.8097 17.5631C22.1522 17.5631 21.6196 14.9895 21.6196 11.8153C21.6196 8.64106 22.1524 6.0675 22.8097 6.0675C23.4669 6.0675 24 8.64083 24 11.8153"
+                    class="fill-current text-primary-400"
+                />
+            </svg>
+
+            <svg
+                viewBox="0 0 16 16"
+                class="w-5 h-5"
+                fill="none"
+            >
+                <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+                    class="fill-current text-primary-400"
+                ></path>
+            </svg>
+        </div>
+
+        <div class="block lg:hidden pl-6">
+            <button
+                class="flex items-center gap-4 bg-transparent border-transparent font-medium uppercase text-sm p-3 -mr-3 rounded outline-none focus:outline-none ease-linear transition-all duration-150"
+                [ngClass]="{'text-primary-50 hover:bg-primary-500 hover:text-white': theme === 'dark', 'text-primary hover:bg-primary-50 hover:text-primary-600': theme === 'light'}"
+                (click)="dropdown.open($event)"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4 6h16M4 12h16m-7 6h7"
+                    />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<tw-dropdown #dropdown>
+    <div
+        class="py-1"
+        role="none"
+    >
+        <a
+            *ngFor="let item of navigation; trackBy:trackByFn"
+            [routerLink]="[item.link]"
+            [fragment]="item.fragment || null"
+            class="block px-4 py-2 text-sm text-gray-700 cursor-pointer"
+            role="menuitem"
+            tabindex="-1"
+            (click)="dropdown.close()"
+        >
+            {{item.label}}
+        </a>
+
+        <div class="w-full h-[1px] bg-gray-200 my-4"></div>
+
+        <a
+            class="block px-4 py-2 text-sm text-primary-500 cursor-pointer font-medium"
+            role="menuitem"
+            tabindex="-1"
+            href="https://app.usemotion.com/meet/corey-persic/careplan-demo"
+            target="_blank"
+            (click)="dropdown.close()"
+        >
+            Book a Demo
+        </a>
+    </div>
+</tw-dropdown>
