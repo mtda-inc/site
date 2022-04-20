@@ -3,6 +3,48 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@-webkit-keyframes marquee {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+@keyframes marquee {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes marquee-reverse {
+    0% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+@keyframes marquee-reverse {
+    0% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
 html,
 body {
     scroll-behavior: smooth;
@@ -110,5 +152,44 @@ body {
 
     &::-webkit-scrollbar {
         display: none; /* for Chrome, Safari, and Opera */
+    }
+}
+
+.stack-animation {
+    -webkit-animation: marquee 80s linear infinite;
+    animation: marquee 80s linear infinite;
+
+    @media (max-width: 1024px) {
+        -webkit-animation: unset;
+        animation: unset;
+
+        .stack-animation-inner {
+            -webkit-animation: marquee 80s linear infinite;
+            animation: marquee 80s linear infinite;
+        }
+    }
+
+    &.reverse {
+        @media (max-width: 1024px) {
+            .stack-animation-inner {
+                -webkit-animation: marquee 80s linear infinite reverse;
+                animation: marquee 80s linear infinite reverse;
+            }
+        }
+    }
+}
+
+.stack-animation-container {
+    &:hover,
+    &:focus {
+        .stack-animation {
+            -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+        }
+
+        .stack-animation-inner {
+            -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+        }
     }
 }
