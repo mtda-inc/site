@@ -27,8 +27,12 @@ body {
 .section-container {
     @apply w-full max-w-[1920px] my-0 mx-auto block relative;
 
-    &:not(.smaller-py) {
+    &:not(.smaller-py, .no-padding),
+    &:not(.no-padding) {
         @apply py-16 lg:py-24;
+    }
+    &.smaller-py {
+        @apply py-10 lg:py-16;
     }
     &.smaller-py {
         @apply py-10 lg:py-16;
@@ -98,4 +102,13 @@ body {
 
 .title-mark {
     @apply bg-slate-200 px-2;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+
+    &::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
+    }
 }

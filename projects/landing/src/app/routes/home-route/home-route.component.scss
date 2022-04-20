@@ -1,1 +1,35 @@
+.stack-animation {
+    -webkit-animation: marquee 50s linear infinite;
+    animation: marquee 50s linear infinite;
+}
 
+.stack-animation-container {
+    &:hover,
+    &:focus {
+        .stack-animation {
+            -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+        }
+    }
+}
+
+@-webkit-keyframes marquee {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+@keyframes marquee {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
