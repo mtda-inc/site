@@ -42,12 +42,25 @@ body {
 .bg-square {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(241 245 249 / 0.04)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1));
+    z-index: 1;
 }
 
 .bg-gradient {
-    content: '';
-    background: linear-gradient(-47deg, var(--color-secondary-900) 0%, var(--color-primary-900) 47%);
-    opacity: 0.94;
+    background: rgba(0, 0, 0, 0)
+        url('https://images.unsplash.com/photo-1484807352052-23338990c6c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')
+        no-repeat fixed center bottom/cover;
+
+    &:after {
+        content: '';
+        background: linear-gradient(-47deg, var(--color-secondary-900) 0%, var(--color-primary-900) 47%);
+        opacity: 0.94;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 0;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -84,5 +97,5 @@ body {
 }
 
 .title-mark {
-    @apply bg-slate-200;
+    @apply bg-slate-200 px-2;
 }
