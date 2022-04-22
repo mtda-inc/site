@@ -193,3 +193,15 @@ body {
         }
     }
 }
+
+.bg-square-top {
+    @apply relative;
+
+    &:before {
+        content: '';
+        background-repeat: repeat-x;
+        background-image: url('/assets/images/bg-slate-content-top.png');
+        @apply absolute left-0 z-0 w-full h-[128px] -top-[17px];
+        opacity: 0.7;
+    }
+}

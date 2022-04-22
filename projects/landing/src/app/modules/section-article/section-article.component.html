@@ -1,0 +1,59 @@
+<div class="inner-container">
+    <div class="flex lg:flex-row flex-col lg:justify-between w-full">
+        <div class="lg:max-w-3xl lg:order-0 order-1">
+            <h2 class="text-[32px] leading-snug font-bold text-slate-900 mt-2">Written <span class="title-mark">Articles</span></h2>
+            <p class="text-lg text-slate-700 mt-4">
+                <span class="italic title-mark">"If you have knowledge, let others light their candles in it."</span> The best way to learn and grow is by sharing experience
+            </p>
+        </div>
+    </div>
+
+    <div class="mt-8 flex flex-col divide-y">
+        <div
+            class="flex md:flex-row flex-col gap-4 pt-6"
+            *ngFor="let item of articles"
+        >
+            <div class="flex-1 md:pr-10 md:order-0 order-1">
+                <a
+                    class="text-base font-semibold mb-2 cursor-pointer block"
+                    [href]="item.link"
+                    target="_blank"
+                >
+                    {{item.title}}
+                </a>
+                <a
+                    class="text-sm text-slate-700 cursor-pointer block"
+                    [href]="item.link"
+                    target="_blank"
+                >
+                    {{item.desc}}
+                </a>
+                <a
+                    class="py-6 text-xs text-slate-500 cursor-pointer block"
+                    [href]="item.link"
+                    target="_blank"
+                >
+                    {{item.created}}
+                    <span class="px-1">·</span>
+                    {{item.time}}
+                </a>
+            </div>
+
+            <div class="md:w-48 w-full md:order-1 order-0">
+                <a
+                    [href]="item.link"
+                    target="_blank"
+                    class="cursor-pointer block"
+                >
+                    <img
+                        class="rounded"
+                        [src]="item.image"
+                        [alt]="item.title"
+                        [width]="item.width"
+                        [height]="item.height"
+                    >
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

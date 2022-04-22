@@ -7,6 +7,7 @@ import { PageToolbarModule } from '../../modules/page-toolbar/page-toolbar.modul
 import { SectionAboutModule } from '../../modules/section-about/section-about.module';
 import { SectionWhatIDoModule } from '../../modules/section-what-i-do/section-what-i-do.module';
 import { SectionStackModule } from '../../modules/section-stack/section-stack.module';
+import { SectionArticleModule } from '../../modules/section-article/section-article.module';
 
 const routes: Routes = [
     {
@@ -25,6 +26,7 @@ const routes: Routes = [
         SectionAboutModule,
         SectionWhatIDoModule,
         SectionStackModule,
+        SectionArticleModule,
     ],
     exports: [HomeRouteComponent],
 })
