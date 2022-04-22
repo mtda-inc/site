@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { IconService } from '../../services/icon.service';
 
 @Component({
     selector: 'section-stack',
@@ -11,162 +12,166 @@ export class SectionStackComponent implements OnInit {
         design: [
             {
                 title: 'Illustrator',
-                image: 'assets/images/stack-ai.png',
+                svg: this.iconPack.icons.ai,
             },
             {
                 title: 'Photoshop',
-                image: 'assets/images/stack-ps.png',
+                svg: this.iconPack.icons.ps,
             },
             {
                 title: 'Figma',
-                image: 'assets/images/stack-figma.png',
+                svg: this.iconPack.icons.figma,
             },
             {
                 title: 'Adobe XD',
-                image: 'assets/images/stack-xd.png',
+                svg: this.iconPack.icons.xd,
             },
             {
                 title: 'Sketch',
-                image: 'assets/images/stack-sketch.png',
+                svg: this.iconPack.icons.sketch,
             },
             {
                 title: 'Excalidraw',
-                image: 'assets/images/stack-excalidraw.png',
+                svg: this.iconPack.icons.excalidraw,
             },
         ],
         coding: [
             {
                 title: 'Javascript',
-                image: 'assets/images/stack-js.png',
+                svg: this.iconPack.icons.js,
             },
             {
                 title: 'Typescript',
-                image: 'assets/images/stack-ts.png',
+                svg: this.iconPack.icons.ts,
             },
             {
                 title: 'Node JS',
-                image: 'assets/images/stack-nodejs.png',
+                svg: this.iconPack.icons.nodejs,
             },
             {
                 title: 'Express JS',
-                image: 'assets/images/stack-null.png',
+                svg: this.iconPack.icons.arrowRight,
             },
             {
                 title: 'Mongo DB',
-                image: 'assets/images/stack-mongodb.png',
+                svg: this.iconPack.icons.mongo,
             },
             {
                 title: 'Angular',
-                image: 'assets/images/stack-angular.png',
+                svg: this.iconPack.icons.angular,
             },
             {
                 title: 'Ionic',
-                image: 'assets/images/stack-ionic.png',
+                svg: this.iconPack.icons.ionic,
             },
             {
                 title: 'Capacitor',
-                image: 'assets/images/stack-capacitor.png',
+                svg: this.iconPack.icons.capacitor,
             },
             {
                 title: 'Cordova',
-                image: 'assets/images/stack-cordova.png',
+                svg: this.iconPack.icons.cordova,
             },
             {
                 title: 'Tailwind',
-                image: 'assets/images/stack-tailwind.png',
+                svg: this.iconPack.icons.tailwind,
             },
             {
                 title: 'SCSS',
-                image: 'assets/images/stack-sass.png',
+                svg: this.iconPack.icons.sass,
             },
             {
                 title: 'Electron JS',
-                image: 'assets/images/stack-electronjs.png',
+                svg: this.iconPack.icons.electron,
             },
             {
                 title: 'PHP',
-                image: 'assets/images/stack-php.png',
+                svg: this.iconPack.icons.php,
+            },
+            {
+                title: 'MySQL',
+                svg: this.iconPack.icons.mysql,
             },
             {
                 title: 'Java',
-                image: 'assets/images/stack-java.png',
+                svg: this.iconPack.icons.java,
             },
             {
                 title: 'Swift',
-                image: 'assets/images/stack-swift.png',
+                svg: this.iconPack.icons.swift,
             },
         ],
         tooling: [
             {
                 title: 'GIT',
-                image: 'assets/images/stack-git.png',
+                svg: this.iconPack.icons.git,
             },
             {
                 title: 'Github',
-                image: 'assets/images/stack-github.png',
+                svg: this.iconPack.icons.github,
             },
             {
                 title: 'VSCode',
-                image: 'assets/images/stack-vscode.png',
+                svg: this.iconPack.icons.vscode,
             },
             {
                 title: 'XCode',
-                image: 'assets/images/stack-xcode.png',
+                svg: this.iconPack.icons.xcode,
             },
             {
                 title: 'ITerm',
-                image: 'assets/images/stack-iterm.png',
+                svg: this.iconPack.icons.iterm,
             },
             {
                 title: 'ZSH',
-                image: 'assets/images/stack-null.png',
+                svg: this.iconPack.icons.arrowRight,
             },
             {
                 title: 'Source Tree',
-                image: 'assets/images/stack-sourcetree.png',
+                svg: this.iconPack.icons.sourcetree,
             },
             {
                 title: 'Robo 3T',
-                image: 'assets/images/stack-null.png',
+                svg: this.iconPack.icons.arrowRight,
             },
             {
                 title: 'Google Cloud',
-                image: 'assets/images/stack-gcloud.png',
+                svg: this.iconPack.icons.gcloud,
             },
             {
                 title: 'AWS',
-                image: 'assets/images/stack-aws.png',
+                svg: this.iconPack.icons.aws,
             },
             {
                 title: 'Slack',
-                image: 'assets/images/stack-slack.png',
+                svg: this.iconPack.icons.slack,
             },
             {
                 title: 'Discord',
-                image: 'assets/images/stack-discord.png',
+                svg: this.iconPack.icons.discord,
             },
             {
                 title: 'Spotify',
-                image: 'assets/images/stack-spotify.png',
+                svg: this.iconPack.icons.spotify,
             },
         ],
         platform: [
             {
                 title: 'IOS',
-                image: 'assets/images/stack-ios.png',
+                svg: this.iconPack.icons.ios,
             },
             {
                 title: 'Android',
-                image: 'assets/images/stack-android.png',
+                svg: this.iconPack.icons.android,
             },
             {
                 title: 'Desktop',
-                image: 'assets/images/stack-desktop.png',
+                svg: this.iconPack.icons.desktop,
             },
         ],
     };
 
-    constructor() {}
+    constructor(public iconPack: IconService) {}
 
     ngOnInit(): void {}
 }

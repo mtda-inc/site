@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { IconService } from '../../services/icon.service';
 
 @Component({
     selector: 'section-about',
@@ -7,7 +8,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SectionAboutComponent implements OnInit {
-    constructor() {}
+    constructor(public icons: IconService) {}
 
     ngOnInit(): void {}
 }
