@@ -27,7 +27,7 @@
             "tsConfig": "projects/landing/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/landing/src/favicon.ico",
+              "projects/landing/src/robots.txt",
               "projects/landing/src/assets"
             ],
             "styles": [
@@ -97,7 +97,7 @@
             "karmaConfig": "projects/landing/karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/landing/src/favicon.ico",
+              "projects/landing/src/robots.txt",
               "projects/landing/src/assets"
             ],
             "styles": [
