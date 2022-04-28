@@ -20,7 +20,10 @@
             class="flex items-center gap-4 py-2 pl-2 pr-4 rounded-full border border-slate-300"
             *ngFor="let item of about"
         >
-            <div class="bg-slate-300 rounded-full w-10 h-10 flex items-center justify-center">
+            <div
+                class="bg-slate-300 rounded-full w-10 h-10 flex items-center justify-center"
+                *ngIf="isBrowser"
+            >
                 <svg
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"

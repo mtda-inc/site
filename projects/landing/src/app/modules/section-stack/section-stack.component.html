@@ -1,4 +1,7 @@
-<div class="flex gap-4 stack-animation">
+<div
+    class="flex gap-4 stack-animation"
+    *ngIf="isBrowser"
+>
     <div class="flex gap-4 stack-animation-inner">
         <div class="px-6 py-4 bg-violet-700 text-violet-200">CODING</div>
 
@@ -156,7 +159,10 @@
     </div>
 </div>
 
-<div class="flex gap-4 stack-animation reverse">
+<div
+    class="flex gap-4 stack-animation reverse"
+    *ngIf="isBrowser"
+>
     <div class="flex gap-4 stack-animation-inner">
         <div class="px-6 py-4 bg-violet-700 text-violet-200">CODING</div>
 

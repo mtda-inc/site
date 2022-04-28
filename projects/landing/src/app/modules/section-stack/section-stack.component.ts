@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, ChangeDetectionStrategy, Inject, PLATFORM_ID } from '@angular/core';
 import { IconService } from '../../services/icon.service';
 
 @Component({
@@ -171,7 +172,11 @@ export class SectionStackComponent implements OnInit {
         ],
     };
 
-    constructor(public iconPack: IconService) {}
+    public isBrowser: boolean;
+
+    constructor(public iconPack: IconService, @Inject(PLATFORM_ID) platformId: any) {
+        this.isBrowser = isPlatformBrowser(platformId);
+    }
 
     ngOnInit(): void {}
 }
