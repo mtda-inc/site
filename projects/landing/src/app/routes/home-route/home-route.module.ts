@@ -9,6 +9,7 @@ import { SectionWhatIDoModule } from '../../modules/section-what-i-do/section-wh
 import { SectionStackModule } from '../../modules/section-stack/section-stack.module';
 import { SectionArticleModule } from '../../modules/section-article/section-article.module';
 import { SectionNgTwModule } from '../../modules/section-ng-tw/section-ng-tw.module';
+import { SectionContactModule } from '../../modules/section-contact/section-contact.module';
 
 const routes: Routes = [
     {
@@ -29,6 +30,7 @@ const routes: Routes = [
         SectionStackModule,
         SectionArticleModule,
         SectionNgTwModule,
+        SectionContactModule,
     ],
     exports: [HomeRouteComponent],
 })
