@@ -4,7 +4,8 @@
 
 export const environment = {
     production: false,
-    ga: 'UA-111119585-1',
+    ga: 'G-RBHPD86SYW',
+    // ga: 'UA-111119585-1',
 };
 
 /*
